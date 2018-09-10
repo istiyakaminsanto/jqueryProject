@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  
+  var previousVal = $("input").val();
+  $("input").on("keyup", function(e){
+    var currentVal = $(this).val();
+    if(previousVal != currentVal){
+      $("#btn").removeAttr('disabled');
+    }
+  })
+});
+</script>
+
+</head>
+<body>
+  <h1>submit button done when value is changed</h1>
+  <input id="elm" type="text" value="one"><br>
+  <input type="text" value="two"><br>
+  <input type="text" value="three"><br>
+  <input type="text" value="four"><br>
+  <input id="btn" type="button" value="submit" disabled>
+</body>
+</html>
