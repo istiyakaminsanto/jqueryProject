@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+
+<button id="loadButton">Load Content</button>
+<p id="show"></p>
+
+</body>
+
+<script>
+
+    $(document).ready(function(){
+        $("#loadButton").on("click", function(){
+            var xhr = new XMLHttpRequest;
+            xhr.onreadystatechange = function(){
+                $("#show").html(xhr.response);
+            }
+            
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+            xhr.send();
+        })
+    });
+
+</script>
+</html>
